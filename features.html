@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features | KryptonOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-black text-emerald-400 font-mono antialiased min-h-screen flex flex-col justify-between border-t-4 border-emerald-500">
+
+  <!-- Nav Header -->
+  <nav class="border-b border-emerald-950 bg-black/90 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2 text-emerald-400 font-bold text-lg hover:text-emerald-300">
+        <span class="text-zinc-500">krypton@os:~#</span> <span>help</span>
+      </a>
+      <div class="flex space-x-6 text-sm">
+        <a href="index.html" class="text-zinc-400 hover:text-emerald-400 transition">[Home]</a>
+        <a href="features.html" class="text-emerald-400 font-bold underline underline-offset-4">[Features]</a>
+        <a href="install.html" class="text-zinc-400 hover:text-emerald-400 transition">[Install / Flash]</a>
+        <a href="https://github.com/DlopedDtorred/KryptonOS" target="_blank" class="border border-emerald-800 text-emerald-400 px-3 py-1 hover:bg-emerald-950 transition">[GitHub Repo]</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-12 w-full">
+    <h1 class="text-2xl font-bold text-zinc-100 mb-2 border-b border-zinc-800 pb-2">
+      KryptonOS Core Features & Command Shell
+    </h1>
+    <p class="text-zinc-500 text-sm mb-8">Integrated utilities available within the built-in KryptShell environment.</p>
+
+    <div class="space-y-6">
+
+      <!-- Shell Commands -->
+      <div class="border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="text-lg font-bold text-emerald-400 mb-3">1. Built-in UNIX Commands</h2>
+        <p class="text-zinc-400 text-xs mb-4">Manage LittleFS flash memory, navigate directories, and manipulate system files using standard syntax.</p>
+        
+        <div class="bg-black border border-zinc-800 p-4 font-mono text-xs text-zinc-300 space-y-1">
+          <p><span class="text-emerald-400">ls [-l]</span> <span class="text-zinc-500">- List files and directories in current path</span></p>
+          <p><span class="text-emerald-400">cd [path]</span> <span class="text-zinc-500">- Change working directory</span></p>
+          <p><span class="text-emerald-400">cat [file]</span> <span class="text-zinc-500">- Print file content to terminal output</span></p>
+          <p><span class="text-emerald-400">rm [file]</span> <span class="text-zinc-500">- Remove entry from LittleFS filesystem</span></p>
+          <p><span class="text-emerald-400">mkdir [dir]</span> <span class="text-zinc-500">- Create a new directory</span></p>
+        </div>
+      </div>
+
+      <!-- System Diagnostic Utilities -->
+      <div class="border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="text-lg font-bold text-emerald-400 mb-3">2. System Utilities & Diagnostics</h2>
+        <p class="text-zinc-400 text-xs mb-4">Monitor ESP32 system state, heap usage, CPU frequency, and task manager routines in real-time.</p>
+        
+        <div class="bg-black border border-zinc-800 p-4 font-mono text-xs text-zinc-300 space-y-1">
+          <p><span class="text-emerald-400">free</span> <span class="text-zinc-500">- Display current RAM allocations and available Heap</span></p>
+          <p><span class="text-emerald-400">top</span> <span class="text-zinc-500">- Real-time FreeRTOS task manager status</span></p>
+          <p><span class="text-emerald-400">neofetch</span> <span class="text-zinc-500">- Display system logo and hardware specs banner</span></p>
+          <p><span class="text-emerald-400">reboot</span> <span class="text-zinc-500">- Hard reset system MCU via software restart</span></p>
+        </div>
+      </div>
+
+      <!-- Network Commands -->
+      <div class="border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="text-lg font-bold text-emerald-400 mb-3">3. Networking Stack (KryptNet Utility)</h2>
+        <p class="text-zinc-400 text-xs mb-4">Configure WiFi interfaces and run basic network tests directly from the command line.</p>
+        
+        <div class="bg-black border border-zinc-800 p-4 font-mono text-xs text-zinc-300 space-y-1">
+          <p><span class="text-emerald-400">wifi connect [SSID] [PASS]</span> <span class="text-zinc-500">- Join wireless network</span></p>
+          <p><span class="text-emerald-400">ifconfig</span> <span class="text-zinc-500">- Print assigned IP, gateway, and MAC address</span></p>
+          <p><span class="text-emerald-400">curl [URL]</span> <span class="text-zinc-500">- Fetch HTTP resource over the network</span></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-900 py-6 text-center text-zinc-600 text-xs">
+    <p>KryptonOS Project &copy; GNU / MIT Licensed. Designed for ESP32 devices.</p>
+  </footer>
+
+</body>
+</html>
